@@ -1,0 +1,77 @@
+/* #009879 */
+.column {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.table_container {
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.add_button_container {
+  text-align: center;
+}
+
+.add_button {
+  background-color: #009879;
+  padding: 0.5rem;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 600;
+  border-color: #012c76;
+  margin: 0.3rem 0.5rem;
+  width: 100px;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.table thead tr {
+  background-color: rgb(83, 130, 217);
+  color: #ffffff;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.confirm_button {
+  background-color: #009879;
+  padding: 0.5rem;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0.3rem 0.5rem;
+  width: 100px;
+}
+
+.delete_button {
+  background-color: rgb(220, 53, 70);
+  padding: 0.5rem;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 600;
+  border-color: #760101;
+  margin: 0.3rem 0.5rem;
+  width: 100px;
+}

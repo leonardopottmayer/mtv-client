@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:7575",
+  // baseURL: "http://localhost:7575",
+  baseURL: "https://mtv-api.herokuapp.com/",
 });
 
 api.interceptors.request.use(
