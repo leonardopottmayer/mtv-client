@@ -1,7 +1,17 @@
 /* #009879 */
+.main {
+  background-color: #1a1b1f;
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .column {
   text-align: center;
   margin-top: 2rem;
+}
+
+.column h1 {
+  color: #fff;
 }
 
 .table_container {
@@ -45,6 +55,10 @@
 .table td {
   padding: 12px 15px;
   text-align: center;
+}
+
+.table td {
+  background-color: #fff;
 }
 
 .table tbody tr {

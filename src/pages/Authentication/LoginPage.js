@@ -27,7 +27,7 @@ const LoginPage = () => {
   return (
     <div className={styles.main}>
       <div className={styles.login_container}>
-        <h1 className={styles.login_title}>e-finance</h1>
+        <h1 className={styles.login_title}>mtv</h1>
         <form onSubmit={handleSubmit}>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
@@ -42,7 +42,7 @@ const LoginPage = () => {
             />
           </InputGroup>
           <InputGroup className="mb-3">
-            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+            <InputGroup.Text id="basic-addon1">🔒</InputGroup.Text>
             <Form.Control
               placeholder="Password"
               name="password"

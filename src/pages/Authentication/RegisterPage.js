@@ -35,7 +35,7 @@ const RegisterPage = () => {
   return (
     <div className={styles.main}>
       <div className={styles.register_container}>
-        <h1 className={styles.register_title}>e-finance</h1>
+        <h1 className={styles.register_title}>mtv</h1>
         <form onSubmit={handleSubmit}>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">💬</InputGroup.Text>

@@ -36,6 +36,11 @@ const AdminUsers = () => {
     fetchData();
   };
 
+  const handleDeleteUser = async (e) => {
+    await api.delete(`/admin/user/${e.target.value}`);
+    fetchData();
+  };
+
   return (
     <div className={styles.main}>
       <Navbar />
@@ -68,6 +73,13 @@ const AdminUsers = () => {
                           onClick={handleBlockUser}
                         >
                           Block
+                        </button>
+                        <button
+                          className={styles.delete_button}
+                          value={au._id}
+                          onClick={handleDeleteUser}
+                        >
+                          Delete
                         </button>
                       </td>
                     </tr>
@@ -103,6 +115,13 @@ const AdminUsers = () => {
                           onClick={handleApproveUser}
                         >
                           Approve
+                        </button>
+                        <button
+                          className={styles.delete_button}
+                          value={wu._id}
+                          onClick={handleDeleteUser}
+                        >
+                          Delete
                         </button>
                       </td>
                     </tr>
