@@ -27,7 +27,7 @@ const AdminUsers = () => {
   }, []);
 
   const handleApproveUser = async (e) => {
-    await api.post(`/admin/user/${e.target.value}/approve`);
+    await api.post(`/admin/user/${e.target.value}/unlock`);
     fetchData();
   };
 
@@ -68,7 +68,7 @@ const AdminUsers = () => {
                       <td>{au.tel}</td>
                       <td>
                         <button
-                          className={styles.delete_button}
+                          className={styles.block_button}
                           value={au._id}
                           onClick={handleBlockUser}
                         >
@@ -114,7 +114,7 @@ const AdminUsers = () => {
                           value={wu._id}
                           onClick={handleApproveUser}
                         >
-                          Approve
+                          Unlock
                         </button>
                         <button
                           className={styles.delete_button}
