@@ -12,7 +12,7 @@ const Credits = () => {
         <a
           className={styles.gradient}
           target="_blank"
-          href="https://www.pottmayer.dev"
+          href="https://pottmayer.dev"
         >
           Leonardo Pottmayer
         </a>
