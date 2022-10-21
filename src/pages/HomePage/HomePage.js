@@ -10,13 +10,16 @@ import Credits from "../../components/Credits/Credits";
 
 const HomePage = () => {
   const [phrase, setPhrase] = useState(null);
+  const [hasAlreadySentAccessData, setHasAlreadySentAccessData] = useState(false);
 
   const fetchApi = async () => {
     const response = await api.get("phrase/randomPhrase");
 
-    const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
-      projectName: "MTV API"
-    });
+    if(hasAlreadySentAccessData == false){
+      const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
+        projectName: "MTV API"
+      });
+    }
 
     if (response.data.result) {
       setPhrase(response.data.result);
