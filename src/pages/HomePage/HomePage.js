@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import styles from "./HomePage.module.css";
 
@@ -10,23 +10,23 @@ import Credits from "../../components/Credits/Credits";
 
 const HomePage = () => {
   const [phrase, setPhrase] = useState(null);
-  const [hasAlreadySentAccessData, setHasAlreadySentAccessData] = useState(false);
+  const pottmayerDevPostedRef = useRef(false);
 
   const fetchApi = async () => {
     const response = await api.get("phrase/randomPhrase");
 
-    if(hasAlreadySentAccessData == false){
-      const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
-        projectName: "MTV API"
-      });
-    }
-
+    const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
+      projectName: "MTV API"
+    });
+    
     if (response.data.result) {
       setPhrase(response.data.result);
     }
   };
 
   useEffect(() => {
+    if (pottmayerDevPostedRef.current) return;
+    pottmayerDevPostedRef.current = true;
     fetchApi();
   }, []);
 
