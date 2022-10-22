@@ -15,8 +15,8 @@ const HomePage = () => {
     const response = await api.get("phrase/randomPhrase");
 
     const mtvProjectsAccessVariable = localStorage.getItem("@mtv:projectsAccessVariable");
-
-    if (mtvProjectsAccessVariable === "0" || !mtvProjectsAccessVariable){
+    
+    if (mtvProjectsAccessVariable === "0" || mtvProjectsAccessVariable == null){
       const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
         projectName: "MTV"
       });
@@ -30,6 +30,10 @@ const HomePage = () => {
   };
 
   useEffect(() => {
+    if(localStorage.getItem("@mtv:projectsAccessVariable") === "1"){
+      localStorage.setItem("@mtv:projectsAccessVariable", "0");
+    }
+
     if(performance.navigation.type === 1) {
       localStorage.setItem("@mtv:projectsAccessVariable", "0");
     }
