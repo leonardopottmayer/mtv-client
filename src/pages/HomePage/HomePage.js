@@ -16,7 +16,7 @@ const HomePage = () => {
 
     const mtvProjectsAccessVariable = localStorage.getItem("@mtv:projectsAccessVariable");
 
-    if (mtvProjectsAccessVariable === "0"){
+    if (mtvProjectsAccessVariable === "0" || !mtvProjectsAccessVariable){
       const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
         projectName: "MTV"
       });
