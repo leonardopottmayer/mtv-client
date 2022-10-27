@@ -9,20 +9,18 @@ import PhraseComp from "../../components/Phrase/PhraseComp";
 import Credits from "../../components/Credits/Credits";
 
 const HomePage = () => {
+  const neverChanges = 1;
   const [phrase, setPhrase] = useState(null);
 
   const fetchApi = async () => {
     const response = await api.get("phrase/randomPhrase");
 
-    const mtvProjectsAccessVariable = localStorage.getItem("@mtv:projectsAccessVariable");
-    
-    if (mtvProjectsAccessVariable === "0" || mtvProjectsAccessVariable == null){
-      const projectAccessPostResponse = await pottmayerDevApi.post("/projectsAccess", {
-        projectName: "MTV"
-      });
-
-      localStorage.setItem("@mtv:projectsAccessVariable", "1");
-    }
+    const projectAccessPostResponse = await pottmayerDevApi.post(
+      "/projectsAccess",
+      {
+        projectName: "MTV",
+      }
+    );
 
     if (response.data.result) {
       setPhrase(response.data.result);
@@ -30,16 +28,8 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    if(localStorage.getItem("@mtv:projectsAccessVariable") === "1"){
-      localStorage.setItem("@mtv:projectsAccessVariable", "0");
-    }
-
-    if(performance.navigation.type === 1) {
-      localStorage.setItem("@mtv:projectsAccessVariable", "0");
-    }
-
     fetchApi();
-  }, []);
+  }, [neverChanges]);
 
   return (
     <div className={styles.main}>
