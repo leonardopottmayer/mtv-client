@@ -12,15 +12,19 @@ const HomePage = () => {
   const [phrase, setPhrase] = useState(null);
 
   useEffect(() => {
+    let ignore = false;
+
     const fetchApi = async () => {
       const response = await api.get("phrase/randomPhrase");
 
-      const projectAccessPostResponse = await pottmayerDevApi.post(
-        "/projectsAccess",
-        {
-          projectName: "MTV",
-        }
-      );
+      if (!ignore) {
+        const projectAccessPostResponse = await pottmayerDevApi.post(
+          "/projectsAccess",
+          {
+            projectName: "MTV",
+          }
+        );
+      }
 
       if (response.data.result) {
         setPhrase(response.data.result);
@@ -28,6 +32,10 @@ const HomePage = () => {
     };
 
     fetchApi();
+
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   return (
