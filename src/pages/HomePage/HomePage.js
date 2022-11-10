@@ -19,7 +19,7 @@ const HomePage = () => {
 
       if (!ignore) {
         const projectAccessPostResponse = await pottmayerDevApi.post(
-          "/projectsAccess",
+          "/projectsAccess/d",
           {
             projectName: "MTV",
           }
