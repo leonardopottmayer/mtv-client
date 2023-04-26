@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   // baseURL: "http://localhost:7575",
-  baseURL: "https://api.mtv.pottmayer.dev/",
+  baseURL: "https://mtv-api.onrender.com",
 });
 
 api.interceptors.request.use(
