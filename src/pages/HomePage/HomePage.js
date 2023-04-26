@@ -17,14 +17,14 @@ const HomePage = () => {
     const fetchApi = async () => {
       const response = await api.get("phrase/randomPhrase");
 
-      if (!ignore) {
-        const projectAccessPostResponse = await pottmayerDevApi.post(
-          "/projectsAccess/d",
-          {
-            projectName: "MTV",
-          }
-        );
-      }
+      // if (!ignore) {
+      //   const projectAccessPostResponse = await pottmayerDevApi.post(
+      //     "/projectsAccess/d",
+      //     {
+      //       projectName: "MTV",
+      //     }
+      //   );
+      // }
 
       if (response.data.result) {
         setPhrase(response.data.result);
